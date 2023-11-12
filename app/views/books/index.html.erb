@@ -1,6 +1,5 @@
 <h1> Books </h1>
-<%# button_to 'New Book', books_new_path, method: :get %>
-<%= link_to 'New book', books_new_path %>
+<%= button_to 'New Book', books_new_path, method: :get %>
 
 <% @books.each do |book| %>
   <ul>
@@ -8,7 +7,7 @@
     <li><%= book.author %></li>
     <li><%= book.description %></li>
     <li><%= book.reading_status %></li>
-    <button>Modify</button>
-    <button>Delete</button>
+  <%= button_to 'Modify', modify_books_path(book), method: :get %>
+  <%= button_to 'Delete', book, method: :delete %>
   </ul>
 <% end %>
